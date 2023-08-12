@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <script type='text/javascript'>
+        function GetMap(){
+            var map = new Microsoft.Maps.Map('#myMap', {
+                credentials: 'Aszb1A2XgN-dZ00W6YFWN7w4xPAWBzzC1H5SbZfj7Mdq1CickM8PAXcRk3ghQFyu'
+            });
+            navigator.geolocation.getCurrentPosition(function (position) {
+                console.log("inn")
+                var loc = new Microsoft.Maps.Location(
+                    position.coords.latitude,
+                    position.coords.longitude);    
+                var pin = new Microsoft.Maps.Pushpin(loc);
+                map.entities.push(pin);    
+                map.setView({ center: loc, zoom: 15 });
+            });
+        }
+        </script>
+        <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+    
+    <title>Geolocation</title>
+
+    <style>
+        body {
+            background-color: rgb(2, 3, 78);
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+            padding: 5px;
+            background-color: rgb(17, 8, 8);
+        }
+
+        footer {
+            background-color: rgb(1, 45, 10);
+            padding: 10px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .map {
+            padding: 10px;
+            position: absolute;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="">
+    <header>
+        <h2>SAGAR GURUNG</h2>
+        <h3>Geolocation website</h3>
+        <h4>Allow the website to access your location to see your current location in the map!</h4>
+    </header>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h2><u>This is your current Location: </u></h2>
+            </div>
+        </div>
+        <div class="row map-container">
+            <div class="col-md-12">
+                <div id="myMap" style="width: 100%; height: 500px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <p>Geolocation maps have revolutionized the way we navigate, interact with our environment, and access location-based services. These dynamic maps, powered by advanced technologies and APIs, provide real-time insight into our surroundings and offer an array of applications spanning from personal convenience to large-scale business operations. At the core of geolocation maps lies the fusion of satellite imagery, geographic data, and digital interfaces. Satellite constellations like GPS, GLONASS, and Galileo collaborate to pinpoint precise global coordinates. These coordinates are then translated into interactive maps that we can access via web browsers or mobile apps, empowering us to visualize geographical information with remarkable accuracy. The integration of geolocation maps into everyday life has fundamentally altered the way we interact with our surroundings. Whether we are seeking directions to a new restaurant, tracking the progress of a rideshare vehicle, or locating the nearest gas station, these maps have become our reliable digital compass, guiding us through the labyrinth of modern urban landscapes.</p>
+
+    <p>Here's an example of Scalable vector graphics: </p>
+
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <!--Using a rectangle as a background for an svg file-->
+        <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+        <image x="50" y="50" width="100" height="100" xlink:href="svg_image.svg" />
+    </svg>
+
+    <div>
+        <footer>
+            <address><b>ADDRESS:</b>
+                7th Cross Road
+                SG Palya, Bangalore-560029
+                Karnataka, INDIA
+            </address>
+            <p>Contact details: sagar.gurung123@gmail.com</p>
+        </footer>
+    </div>
+
+</body>
+</html>
